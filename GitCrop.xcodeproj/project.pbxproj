@@ -19,9 +19,14 @@
 		AA556E542C58A88E00948CCD /* ImageListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA556E532C58A88E00948CCD /* ImageListCollectionCell.swift */; };
 		AA556E562C58D49400948CCD /* AssetAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA556E552C58D49400948CCD /* AssetAlbum.swift */; };
 		AA556E582C58D4AD00948CCD /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA556E572C58D4AD00948CCD /* String+Extension.swift */; };
+		AA830A962C5CE3EE00B9ABBF /* PhotoShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA830A952C5CE3EE00B9ABBF /* PhotoShape.swift */; };
+		AA830A982C5CE54C00B9ABBF /* PhotoEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA830A972C5CE54C00B9ABBF /* PhotoEditViewController.swift */; };
+		AA830A9A2C5CEC4D00B9ABBF /* PhotoShapeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA830A992C5CEC4D00B9ABBF /* PhotoShapeCollectionCell.swift */; };
+		AA830A9E2C5CF45500B9ABBF /* PhotoEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA830A9D2C5CF45400B9ABBF /* PhotoEditView.swift */; };
+		AA830AA02C5CF83700B9ABBF /* VerticalCollageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA830A9F2C5CF83700B9ABBF /* VerticalCollageView.swift */; };
+		AA830AA22C5CF85100B9ABBF /* GridCollageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA830AA12C5CF85100B9ABBF /* GridCollageView.swift */; };
 		AA83A6592C57B19A008C14E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA83A6582C57B19A008C14E3 /* AppDelegate.swift */; };
-		AA83A65B2C57B19A008C14E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA83A65A2C57B19A008C14E3 /* SceneDelegate.swift */; };
-		AA83A65D2C57B19A008C14E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA83A65C2C57B19A008C14E3 /* ViewController.swift */; };
+		AA83A65D2C57B19A008C14E3 /* FrameSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA83A65C2C57B19A008C14E3 /* FrameSelectViewController.swift */; };
 		AA83A6602C57B19A008C14E3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = AA83A65F2C57B19A008C14E3 /* Base */; };
 		AA83A6622C57B19C008C14E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA83A6612C57B19C008C14E3 /* Assets.xcassets */; };
 		AA83A6652C57B19C008C14E3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = AA83A6642C57B19C008C14E3 /* Base */; };
@@ -39,10 +44,15 @@
 		AA556E532C58A88E00948CCD /* ImageListCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListCollectionCell.swift; sourceTree = "<group>"; };
 		AA556E552C58D49400948CCD /* AssetAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetAlbum.swift; sourceTree = "<group>"; };
 		AA556E572C58D4AD00948CCD /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		AA830A952C5CE3EE00B9ABBF /* PhotoShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoShape.swift; sourceTree = "<group>"; };
+		AA830A972C5CE54C00B9ABBF /* PhotoEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditViewController.swift; sourceTree = "<group>"; };
+		AA830A992C5CEC4D00B9ABBF /* PhotoShapeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoShapeCollectionCell.swift; sourceTree = "<group>"; };
+		AA830A9D2C5CF45400B9ABBF /* PhotoEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditView.swift; sourceTree = "<group>"; };
+		AA830A9F2C5CF83700B9ABBF /* VerticalCollageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCollageView.swift; sourceTree = "<group>"; };
+		AA830AA12C5CF85100B9ABBF /* GridCollageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollageView.swift; sourceTree = "<group>"; };
 		AA83A6552C57B19A008C14E3 /* GitCrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitCrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA83A6582C57B19A008C14E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AA83A65A2C57B19A008C14E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AA83A65C2C57B19A008C14E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AA83A65C2C57B19A008C14E3 /* FrameSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameSelectViewController.swift; sourceTree = "<group>"; };
 		AA83A65F2C57B19A008C14E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA83A6612C57B19C008C14E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA83A6642C57B19C008C14E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -75,7 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				AA83A6582C57B19A008C14E3 /* AppDelegate.swift */,
-				AA83A65A2C57B19A008C14E3 /* SceneDelegate.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -83,9 +92,8 @@
 		AA556E402C58A05D00948CCD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AA83A65C2C57B19A008C14E3 /* ViewController.swift */,
-				AA556E422C58A58700948CCD /* ImageListView.swift */,
-				AA556E532C58A88E00948CCD /* ImageListCollectionCell.swift */,
+				AA830A9B2C5CF2EB00B9ABBF /* FrameSelect */,
+				AA830A9C2C5CF2FB00B9ABBF /* PhotoEdit */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -96,6 +104,7 @@
 				AA556E3A2C58A00200948CCD /* Reusable.swift */,
 				AA556E492C58A6D000948CCD /* PHImage.swift */,
 				AA556E552C58D49400948CCD /* AssetAlbum.swift */,
+				AA830A952C5CE3EE00B9ABBF /* PhotoShape.swift */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -108,6 +117,28 @@
 				AA556E512C58A84600948CCD /* AlbumVarieties.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		AA830A9B2C5CF2EB00B9ABBF /* FrameSelect */ = {
+			isa = PBXGroup;
+			children = (
+				AA83A65C2C57B19A008C14E3 /* FrameSelectViewController.swift */,
+				AA830A992C5CEC4D00B9ABBF /* PhotoShapeCollectionCell.swift */,
+			);
+			path = FrameSelect;
+			sourceTree = "<group>";
+		};
+		AA830A9C2C5CF2FB00B9ABBF /* PhotoEdit */ = {
+			isa = PBXGroup;
+			children = (
+				AA830A972C5CE54C00B9ABBF /* PhotoEditViewController.swift */,
+				AA830A9F2C5CF83700B9ABBF /* VerticalCollageView.swift */,
+				AA830AA12C5CF85100B9ABBF /* GridCollageView.swift */,
+				AA830A9D2C5CF45400B9ABBF /* PhotoEditView.swift */,
+				AA556E422C58A58700948CCD /* ImageListView.swift */,
+				AA556E532C58A88E00948CCD /* ImageListCollectionCell.swift */,
+			);
+			path = PhotoEdit;
 			sourceTree = "<group>";
 		};
 		AA83A64C2C57B19A008C14E3 = {
@@ -222,16 +253,21 @@
 				AA556E392C589ECE00948CCD /* UICollectionView+Extenion.swift in Sources */,
 				AA556E502C58A81100948CCD /* PHAssetConfiguration.swift in Sources */,
 				AA556E522C58A84600948CCD /* AlbumVarieties.swift in Sources */,
-				AA83A65D2C57B19A008C14E3 /* ViewController.swift in Sources */,
+				AA83A65D2C57B19A008C14E3 /* FrameSelectViewController.swift in Sources */,
 				AA556E3D2C58A03400948CCD /* UICollectionViewCell.swift in Sources */,
 				AA556E4A2C58A6D000948CCD /* PHImage.swift in Sources */,
 				AA556E432C58A58700948CCD /* ImageListView.swift in Sources */,
+				AA830A9A2C5CEC4D00B9ABBF /* PhotoShapeCollectionCell.swift in Sources */,
+				AA830A982C5CE54C00B9ABBF /* PhotoEditViewController.swift in Sources */,
 				AA556E562C58D49400948CCD /* AssetAlbum.swift in Sources */,
+				AA830AA22C5CF85100B9ABBF /* GridCollageView.swift in Sources */,
+				AA830A962C5CE3EE00B9ABBF /* PhotoShape.swift in Sources */,
 				AA556E582C58D4AD00948CCD /* String+Extension.swift in Sources */,
+				AA830AA02C5CF83700B9ABBF /* VerticalCollageView.swift in Sources */,
 				AA556E542C58A88E00948CCD /* ImageListCollectionCell.swift in Sources */,
 				AA83A6592C57B19A008C14E3 /* AppDelegate.swift in Sources */,
-				AA83A65B2C57B19A008C14E3 /* SceneDelegate.swift in Sources */,
 				AA556E4E2C58A7B700948CCD /* PHAssetManager.swift in Sources */,
+				AA830A9E2C5CF45500B9ABBF /* PhotoEditView.swift in Sources */,
 				AA556E3B2C58A00200948CCD /* Reusable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,7 +424,6 @@
 				INFOPLIST_FILE = GitCrop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -419,7 +454,6 @@
 				INFOPLIST_FILE = GitCrop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

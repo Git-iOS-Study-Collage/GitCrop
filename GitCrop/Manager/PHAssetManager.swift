@@ -144,21 +144,21 @@ extension PHAssetManager {
     }
     
     func getImageList(
-            assetList: [PHAsset],
-            contentMode: PHImageContentMode = .aspectFit,
-            targetSize: CGSize = CGSize(width: 200, height: 200)
-        ) async -> [PHImage] {
-            var phImages = [PHImage]()
-            for asset in assetList {
-                if let image = await withCheckedContinuation({ continuation in
-                    PHImageManager.default().requestImage(for: asset, targetSize: targetSize, contentMode: contentMode, options: self.imageRequestOptions) { image, _ in
-                        continuation.resume(returning: image)
-                    }
-                }) {
-                    let phImage = PHImage(asset: asset, image: image)
-                    phImages.append(phImage)
+        assetList: [PHAsset],
+        contentMode: PHImageContentMode = .aspectFit,
+        targetSize: CGSize = CGSize(width: 200, height: 200)
+    ) async -> [PHImage] {
+        var phImages = [PHImage]()
+        for asset in assetList {
+            if let image = await withCheckedContinuation({ continuation in
+                PHImageManager.default().requestImage(for: asset, targetSize: targetSize, contentMode: contentMode, options: self.imageRequestOptions) { image, _ in
+                    continuation.resume(returning: image)
                 }
+            }) {
+                let phImage = PHImage(asset: asset, image: image)
+                phImages.append(phImage)
             }
-            return phImages
         }
+        return phImages
+    }
 }

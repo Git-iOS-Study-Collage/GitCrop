@@ -9,7 +9,14 @@ import UIKit
 import SnapKit
 import Photos
 
+protocol ImageViewListViewDelegate: AnyObject {
+    func didSeletedPhoto(phImage: PHImage)
+}
+
 final class ImageViewListView: UIView {
+    
+    weak var delegate: ImageViewListViewDelegate?
+    
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -74,7 +81,10 @@ extension ImageViewListView {
 }
 
 extension ImageViewListView: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = assetList[indexPath.item]
+        delegate?.didSeletedPhoto(phImage: item)
+    }
 }
 
 extension ImageViewListView: UICollectionViewDataSource {
