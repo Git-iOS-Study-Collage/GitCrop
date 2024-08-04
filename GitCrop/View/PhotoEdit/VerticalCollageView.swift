@@ -8,13 +8,7 @@
 import UIKit
 import SnapKit
 
-class CollageView: UIView {
-    var scrollView = UIScrollView()
-    var imageViewList: [UIImageView] = []
-    func setImage(_ image: UIImage, for number: Int) {
-        
-    }
-}
+/// 인생네컷 화면 
 
 class VerticalCollageView: CollageView {
     
@@ -84,11 +78,8 @@ class VerticalCollageView: CollageView {
         
     func setupStackView() {
         for i in 0..<4 {
-            let imageView = UIImageView()
+            let imageView = makeImageView()
             imageView.tag = i
-            imageView.contentMode = .scaleAspectFill
-            imageView.clipsToBounds = true
-            imageView.backgroundColor = .blue
             stackView.addArrangedSubview(imageView)
             imageViewList.append(imageView)
             
@@ -96,9 +87,5 @@ class VerticalCollageView: CollageView {
                 $0.width.height.equalTo(frame.width/2)
             }
         }
-    }
-    
-    override func setImage(_ image: UIImage, for number: Int) {
-        imageViewList[number].image = image
     }
 }

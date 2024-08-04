@@ -7,6 +7,8 @@
 
 import UIKit
 
+/// 창문형 콜라주 화면
+
 class GridCollageView: CollageView {
     
     private let mainStackView = UIStackView()
@@ -80,10 +82,8 @@ class GridCollageView: CollageView {
             horizontalStackView.spacing = 1
             
             for j in 0..<2 {
-                let imageView = UIImageView()
-                imageView.contentMode = .scaleAspectFill
-                imageView.clipsToBounds = true
-                imageView.backgroundColor = .lightGray // Placeholder color
+                let imageView = makeImageView()
+                
                 if i == 0 {
                     imageView.tag = i
                 } else {
@@ -95,9 +95,5 @@ class GridCollageView: CollageView {
             stackView.addArrangedSubview(horizontalStackView)
         }
         
-    }
-    
-    override func setImage(_ image: UIImage, for number: Int) {
-        imageViewList[number].image = image
     }
 }

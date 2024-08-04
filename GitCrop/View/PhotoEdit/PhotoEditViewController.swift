@@ -7,6 +7,8 @@
 
 import UIKit
 
+/// 사진편집 Controller
+
 class PhotoEditViewController: UIViewController {
     let photoShape: PhotoShape
     var collageView: CollageView!
@@ -30,6 +32,7 @@ class PhotoEditViewController: UIViewController {
         anchorUI()
     }
     
+    /// 선택한 콜라주 설정
     func collageViewSetup() {
         let size =  CGSize(width: view.frame.width, height: view.frame.width)
         switch photoShape.shapeType {
@@ -85,8 +88,8 @@ class PhotoEditViewController: UIViewController {
     }
 }
 
-
 extension PhotoEditViewController: ImageViewListViewDelegate {
+    /// 라이브러리 사진 선택 후 콜라주 뷰에 넣기
     func didSeletedPhoto(phImage: PHImage) {
         if count > 3 {
             count = 0

@@ -9,6 +9,9 @@ import UIKit
 import SnapKit
 import Photos
 
+
+/// 라이브러리의 사진 목록 화면
+
 protocol ImageViewListViewDelegate: AnyObject {
     func didSeletedPhoto(phImage: PHImage)
 }

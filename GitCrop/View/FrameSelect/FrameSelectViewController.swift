@@ -7,6 +7,8 @@
 
 import UIKit
 
+/// 콜라주 종류 선택 Contrller
+
 class FrameSelectViewController: UIViewController {
     var photoShapes: [PhotoShape] = [FourVertical(), FourWindow()]
     

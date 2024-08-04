@@ -7,10 +7,11 @@
 
 import UIKit
 
+/// 콜라주 화면 스크롤 Container 화면
+
 final class PhotoSelectView: UIView {
     private lazy var imageView = UIImageView()
     private lazy var scrollView = UIScrollView()
-    
     
     init() {
         super.init(frame: .zero)
