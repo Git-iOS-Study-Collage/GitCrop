@@ -8,7 +8,7 @@
 import UIKit
 import Photos
 
-/// 사진 라이브러리 불러오기 담당 Manager
+/// 사진 라이브러리 불러오기 담당 Manager
 
 final class PHAssetManager {
     static let shared = PHAssetManager()

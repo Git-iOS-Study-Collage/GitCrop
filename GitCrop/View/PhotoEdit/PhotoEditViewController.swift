@@ -30,6 +30,7 @@ class PhotoEditViewController: UIViewController {
         insertUI()
         basicSetUI()
         anchorUI()
+        setupNavigationUI()
     }
     
     /// 선택한 콜라주 설정
@@ -86,6 +87,11 @@ class PhotoEditViewController: UIViewController {
             $0.top.equalTo(collageView.snp.bottom)
         }
     }
+    
+    func setupNavigationUI() {
+        let saveButton = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonPressed))
+        navigationItem.rightBarButtonItem = saveButton
+    }
 }
 
 extension PhotoEditViewController: ImageViewListViewDelegate {
@@ -97,5 +103,27 @@ extension PhotoEditViewController: ImageViewListViewDelegate {
         
         collageView.setImage(phImage.image, for: count)
         count += 1
+    }
+}
+
+extension PhotoEditViewController {
+    
+    @objc func saveButtonPressed() {
+//        saveImageToPhotos(image: collageView.stackView.toImage())
+        saveImageToPhotos(image: collageView.stackView.asImage(targetWidth: 1920))
+    }
+    
+    func saveImageToPhotos(image: UIImage) {
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
+
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            // 저장 실패 시 처리
+            showAlert(title: "오류", message: error.localizedDescription)
+        } else {
+            // 저장 성공 시 처리
+            showAlert(message: "저장되었습니다.")
+        }
     }
 }

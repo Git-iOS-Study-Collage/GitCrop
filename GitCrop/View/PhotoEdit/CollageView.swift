@@ -11,6 +11,7 @@ import UIKit
 
 class CollageView: UIView {
     var scrollView = UIScrollView()
+    var stackView = UIStackView()
     var imageViewList: [UIImageView] = []
     var selectMode = false
     var selectCount = 0

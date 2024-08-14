@@ -31,6 +31,8 @@
 		AA83A6602C57B19A008C14E3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = AA83A65F2C57B19A008C14E3 /* Base */; };
 		AA83A6622C57B19C008C14E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA83A6612C57B19C008C14E3 /* Assets.xcassets */; };
 		AA83A6652C57B19C008C14E3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = AA83A6642C57B19C008C14E3 /* Base */; };
+		E248F4422C6B2F73006E12E5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248F4412C6B2F73006E12E5 /* UIView+Extension.swift */; };
+		E248F4442C6B324B006E12E5 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248F4432C6B324B006E12E5 /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		AA83A6612C57B19C008C14E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA83A6642C57B19C008C14E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA83A6662C57B19C008C14E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E248F4412C6B2F73006E12E5 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		E248F4432C6B324B006E12E5 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 				AA556E382C589ECE00948CCD /* UICollectionView+Extenion.swift */,
 				AA556E572C58D4AD00948CCD /* String+Extension.swift */,
 				AA556E3C2C58A03400948CCD /* UICollectionViewCell.swift */,
+				E248F4412C6B2F73006E12E5 /* UIView+Extension.swift */,
+				E248F4432C6B324B006E12E5 /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -265,9 +271,11 @@
 				AA556E562C58D49400948CCD /* AssetAlbum.swift in Sources */,
 				AA830AA22C5CF85100B9ABBF /* GridCollageView.swift in Sources */,
 				AA830A962C5CE3EE00B9ABBF /* PhotoShape.swift in Sources */,
+				E248F4442C6B324B006E12E5 /* UIViewController+Extension.swift in Sources */,
 				AA556E582C58D4AD00948CCD /* String+Extension.swift in Sources */,
 				AA830AA02C5CF83700B9ABBF /* VerticalCollageView.swift in Sources */,
 				AA556E542C58A88E00948CCD /* ImageListCollectionCell.swift in Sources */,
+				E248F4422C6B2F73006E12E5 /* UIView+Extension.swift in Sources */,
 				AA83A6592C57B19A008C14E3 /* AppDelegate.swift in Sources */,
 				AA556E4E2C58A7B700948CCD /* PHAssetManager.swift in Sources */,
 				AA830A9E2C5CF45500B9ABBF /* PhotoEditView.swift in Sources */,
@@ -424,6 +432,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3HC54CTUUJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GitCrop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -454,6 +463,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3HC54CTUUJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GitCrop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

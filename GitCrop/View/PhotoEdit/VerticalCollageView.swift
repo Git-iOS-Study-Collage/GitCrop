@@ -12,7 +12,6 @@ import SnapKit
 
 class VerticalCollageView: CollageView {
     
-    private let stackView = UIStackView()
     var widthConstraint: Constraint?
     
     override init(frame: CGRect) {

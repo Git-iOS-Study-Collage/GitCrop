@@ -11,9 +11,6 @@ import UIKit
 
 class GridCollageView: CollageView {
     
-    private let mainStackView = UIStackView()
-    private let stackView = UIStackView()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         inserrUI()
