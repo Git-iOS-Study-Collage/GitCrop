@@ -35,7 +35,7 @@ class PhotoEditViewController: UIViewController {
     
     /// 선택한 콜라주 설정
     func collageViewSetup() {
-        let size =  CGSize(width: view.frame.width, height: view.frame.width)
+        let size =  view.frame.size
         switch photoShape.shapeType {
         case .vertical:
             collageView = VerticalCollageView(frame: CGRect(origin: .zero, size: size))
@@ -71,11 +71,12 @@ class PhotoEditViewController: UIViewController {
     
     func collageViewAnchor() {
         collageView.snp.makeConstraints {
-            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+//            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.centerX.equalTo(view.safeAreaLayoutGuide)
             if photoShape.shapeType == .vertical {
                 $0.width.height.equalTo(view.frame.width+(view.frame.width/2))
             } else {
-
                 $0.width.height.equalTo(view.frame.width)
             }
         }

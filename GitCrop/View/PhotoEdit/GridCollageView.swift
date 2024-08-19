@@ -79,15 +79,16 @@ class GridCollageView: CollageView {
             horizontalStackView.spacing = 1
             
             for j in 0..<2 {
-                let imageView = makeImageView()
+                let editableImageView = EditableImageView()
+                editableImageView.setTappedEvent(target: self, action: #selector(imageViewTapped))
                 
                 if i == 0 {
-                    imageView.tag = i
+                    editableImageView.tag = i
                 } else {
-                    imageView.tag = i+j+1
+                    editableImageView.tag = i+j+1
                 }
-                imageViewList.append(imageView)
-                horizontalStackView.addArrangedSubview(imageView)
+                imageViewList.append(editableImageView)
+                horizontalStackView.addArrangedSubview(editableImageView)
             }
             stackView.addArrangedSubview(horizontalStackView)
         }

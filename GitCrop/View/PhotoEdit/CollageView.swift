@@ -12,13 +12,14 @@ import UIKit
 class CollageView: UIView {
     var scrollView = UIScrollView()
     var stackView = UIStackView()
-    var imageViewList: [UIImageView] = []
+    var imageViewList: [EditableImageView] = []
     var selectMode = false
     var selectCount = 0
     
     /// 이미지 뷰 선택 시 활성화 TapGesture
     @objc func imageViewTapped(_ gesture: UITapGestureRecognizer) {
-        guard let imageView = gesture.view as? UIImageView else { return }
+//        guard let imageView = gesture.view as? UIImageView else { return }
+        guard let imageView = gesture.view else { return }
         selectMode = true
         selectCount = imageView.tag
         imageViewList.forEach {
@@ -39,10 +40,10 @@ class CollageView: UIView {
     /// 사진 넣기
     func setImage(_ image: UIImage, for number: Int) {
         if selectMode == true {
-            imageViewList[selectCount].image = image
+            imageViewList[selectCount].setImage(image)
             clear()
         } else {
-            imageViewList[number].image = image
+            imageViewList[number].setImage(image)
         }
     }
     

@@ -33,6 +33,8 @@
 		AA83A6652C57B19C008C14E3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = AA83A6642C57B19C008C14E3 /* Base */; };
 		E248F4422C6B2F73006E12E5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248F4412C6B2F73006E12E5 /* UIView+Extension.swift */; };
 		E248F4442C6B324B006E12E5 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248F4432C6B324B006E12E5 /* UIViewController+Extension.swift */; };
+		E248F4462C72CDEC006E12E5 /* EditableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248F4452C72CDEC006E12E5 /* EditableImageView.swift */; };
+		E248F4482C72CE05006E12E5 /* ZoomableImageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248F4472C72CE05006E12E5 /* ZoomableImageDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,8 @@
 		AA83A6662C57B19C008C14E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E248F4412C6B2F73006E12E5 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		E248F4432C6B324B006E12E5 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		E248F4452C72CDEC006E12E5 /* EditableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableImageView.swift; sourceTree = "<group>"; };
+		E248F4472C72CE05006E12E5 /* ZoomableImageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableImageDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,8 @@
 				AA830A9D2C5CF45400B9ABBF /* PhotoEditView.swift */,
 				AA556E422C58A58700948CCD /* ImageListView.swift */,
 				AA556E532C58A88E00948CCD /* ImageListCollectionCell.swift */,
+				E248F4452C72CDEC006E12E5 /* EditableImageView.swift */,
+				E248F4472C72CE05006E12E5 /* ZoomableImageDelegate.swift */,
 			);
 			path = PhotoEdit;
 			sourceTree = "<group>";
@@ -271,6 +277,8 @@
 				AA556E562C58D49400948CCD /* AssetAlbum.swift in Sources */,
 				AA830AA22C5CF85100B9ABBF /* GridCollageView.swift in Sources */,
 				AA830A962C5CE3EE00B9ABBF /* PhotoShape.swift in Sources */,
+				E248F4462C72CDEC006E12E5 /* EditableImageView.swift in Sources */,
+				E248F4482C72CE05006E12E5 /* ZoomableImageDelegate.swift in Sources */,
 				E248F4442C6B324B006E12E5 /* UIViewController+Extension.swift in Sources */,
 				AA556E582C58D4AD00948CCD /* String+Extension.swift in Sources */,
 				AA830AA02C5CF83700B9ABBF /* VerticalCollageView.swift in Sources */,

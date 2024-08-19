@@ -12,8 +12,6 @@ import SnapKit
 
 class VerticalCollageView: CollageView {
     
-    var widthConstraint: Constraint?
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         inserrUI()
@@ -77,13 +75,13 @@ class VerticalCollageView: CollageView {
         
     func setupStackView() {
         for i in 0..<4 {
-            let imageView = makeImageView()
-            imageView.tag = i
-            stackView.addArrangedSubview(imageView)
-            imageViewList.append(imageView)
-            
-            imageView.snp.makeConstraints {
-                $0.width.height.equalTo(frame.width/2)
+            let editableImageView = EditableImageView()
+            editableImageView.setTappedEvent(target: self, action: #selector(imageViewTapped))
+            editableImageView.tag = i
+            stackView.addArrangedSubview(editableImageView)
+            imageViewList.append(editableImageView)
+            editableImageView.snp.makeConstraints {
+                $0.width.height.equalTo(self.snp.width).multipliedBy(0.5)
             }
         }
     }
