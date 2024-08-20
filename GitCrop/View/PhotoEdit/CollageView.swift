@@ -38,7 +38,7 @@ class CollageView: UIView {
     }
     
     /// 사진 넣기
-    func setImage(_ image: UIImage, for number: Int) {
+    func setImage(_ image: UIImage?, for number: Int) {
         if selectMode == true {
             imageViewList[selectCount].setImage(image)
             clear()
