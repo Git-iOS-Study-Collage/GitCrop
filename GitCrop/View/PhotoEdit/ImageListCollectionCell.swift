@@ -23,7 +23,7 @@ final class ImageListCollectionCell: UICollectionViewCell {
     }
     
     func configureCell(phImage: PHImage) {
-        imageView.image = phImage.image
+        imageView.image = phImage.thumbnail
     }
 }
 
