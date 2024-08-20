@@ -14,7 +14,7 @@ class VerticalCollageView: CollageView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        inserrUI()
+        insertUI()
         basicSetUI()
         anchorUI()
         setupStackView()
@@ -25,7 +25,7 @@ class VerticalCollageView: CollageView {
        
     }
  
-    func inserrUI() {
+    func insertUI() {
         addSubview(scrollView)
         scrollView.addSubview(stackView)
     }

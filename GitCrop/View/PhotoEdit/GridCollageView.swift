@@ -13,7 +13,7 @@ class GridCollageView: CollageView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        inserrUI()
+        insertUI()
         basicSetUI()
         anchorUI()
         setupStackView()
@@ -24,7 +24,7 @@ class GridCollageView: CollageView {
         setupStackView()
     }
     
-    func inserrUI() {
+    func insertUI() {
         addSubview(scrollView)
         scrollView.addSubview(stackView)
     }
