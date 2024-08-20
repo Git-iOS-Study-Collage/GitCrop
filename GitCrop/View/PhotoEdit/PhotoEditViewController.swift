@@ -15,6 +15,8 @@ class PhotoEditViewController: UIViewController {
     var imageListView = ImageViewListView()
     var count = 0
     
+    private let imageProcessingQueue = DispatchQueue(label: "com.Git.GitCrop.imageProcessingQueue")
+    
     init(photoShape: PhotoShape) {
         self.photoShape = photoShape
         super.init(nibName: nil, bundle: nil)
@@ -96,14 +98,47 @@ class PhotoEditViewController: UIViewController {
 }
 
 extension PhotoEditViewController: ImageViewListViewDelegate {
+    
+    
     /// 라이브러리 사진 선택 후 콜라주 뷰에 넣기
+    /// 사진 로딩이 오래 걸릴경우 현재 main 스레드가 블럭되는 현상이 잇음
+    /// ex: 아이클라우드 백업으로 처리된 오래된 사진을 불러올 때
     func didSeletedPhoto(phImage: PHImage) {
-        if count > 3 {
-            count = 0
+        if count < 4 {
+            collageView.imageViewList[count].showIndicator()
         }
         
-        collageView.setImage(phImage.image, for: count)
-        count += 1
+        // DispatchGroup 생성
+        let dispatchGroup = DispatchGroup()
+        
+        imageProcessingQueue.async { [weak self] in
+            guard let self = self else { return }
+            
+            // 그룹에 진입
+            dispatchGroup.enter()
+            
+            PHAssetManager.shared.getImage(asset: phImage.asset) { image in
+                // 비동기 작업 완료 후 UI 업데이트
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    
+                    if count > 3 {
+                        count = 0
+                    }
+                    
+                    collageView.setImage(image, for: count)
+                    collageView.imageViewList[count].hideIndicator()
+                    
+                    count += 1
+                }
+                
+                // 작업 완료 시 그룹에서 나옴
+                dispatchGroup.leave()
+            }
+            
+            // 그룹의 모든 작업이 완료될 때까지 대기
+            dispatchGroup.wait()
+        }
     }
 }
 

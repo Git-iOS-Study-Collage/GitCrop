@@ -48,3 +48,43 @@ extension UIView {
         return image
     }
 }
+
+
+extension UIView {
+    
+    // UIActivityIndicatorView를 뷰의 정중앙에 추가하는 함수
+    func showIndicator() {
+        // 기존에 존재하는 Activity Indicator가 있는지 확인하고, 있으면 제거
+        if let existingIndicator = self.viewWithTag(9999) as? UIActivityIndicatorView {
+            existingIndicator.startAnimating()
+            return
+        }
+        
+        // 새로운 Activity Indicator 생성
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.color = .red
+        activityIndicator.tag = 9999 // 태그를 사용하여 나중에 쉽게 찾을 수 있게 설정
+        
+        // Activity Indicator의 크기와 위치를 설정
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(activityIndicator)
+        
+        // 중앙 정렬을 위한 제약조건 설정
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        ])
+        
+        // Activity Indicator 시작
+        activityIndicator.startAnimating()
+    }
+    
+    // UIActivityIndicatorView를 제거하는 함수
+    func hideIndicator() {
+        // 태그로 Activity Indicator를 찾음
+        if let activityIndicator = self.viewWithTag(9999) as? UIActivityIndicatorView {
+            activityIndicator.stopAnimating()
+            activityIndicator.removeFromSuperview()
+        }
+    }
+}
