@@ -104,40 +104,26 @@ extension PhotoEditViewController: ImageViewListViewDelegate {
     /// 사진 로딩이 오래 걸릴경우 현재 main 스레드가 블럭되는 현상이 잇음
     /// ex: 아이클라우드 백업으로 처리된 오래된 사진을 불러올 때
     func didSeletedPhoto(phImage: PHImage) {
-        if count < 4 {
-            collageView.imageViewList[count].showIndicator()
+        
+        if count > 3 {
+            count = 0
         }
         
-        // DispatchGroup 생성
-        let dispatchGroup = DispatchGroup()
+        let finalCount = count
         
-        imageProcessingQueue.async { [weak self] in
-            guard let self = self else { return }
-            
-            // 그룹에 진입
-            dispatchGroup.enter()
-            
+        count += 1
+        
+        collageView.imageViewList[finalCount].showIndicator()
+        
+        imageProcessingQueue.async {
             PHAssetManager.shared.getImage(asset: phImage.asset) { image in
-                // 비동기 작업 완료 후 UI 업데이트
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
                     
-                    if count > 3 {
-                        count = 0
-                    }
-                    
-                    collageView.setImage(image, for: count)
-                    collageView.imageViewList[count].hideIndicator()
-                    
-                    count += 1
+                    collageView.setImage(image, for: finalCount)
+                    collageView.imageViewList[finalCount].hideIndicator()
                 }
-                
-                // 작업 완료 시 그룹에서 나옴
-                dispatchGroup.leave()
             }
-            
-            // 그룹의 모든 작업이 완료될 때까지 대기
-            dispatchGroup.wait()
         }
     }
 }

@@ -51,9 +51,15 @@ extension UIView {
 
 
 extension UIView {
+    // 호출 카운트를 관리할 프로퍼티를 전역 변수로 선언
+    private static var indicatorCount = [String: Int]()
     
     // UIActivityIndicatorView를 뷰의 정중앙에 추가하는 함수
     func showIndicator() {
+        // 인디케이터 카운트 증가
+        let viewID = "\(Unmanaged.passUnretained(self).toOpaque())"
+        UIView.indicatorCount[viewID, default: 0] += 1
+        
         // 기존에 존재하는 Activity Indicator가 있는지 확인하고, 있으면 제거
         if let existingIndicator = self.viewWithTag(9999) as? UIActivityIndicatorView {
             existingIndicator.startAnimating()
@@ -81,6 +87,17 @@ extension UIView {
     
     // UIActivityIndicatorView를 제거하는 함수
     func hideIndicator() {
+        // 인디케이터 카운트 감소
+        let viewID = "\(Unmanaged.passUnretained(self).toOpaque())"
+        if let count = UIView.indicatorCount[viewID] {
+            if count > 1 {
+                UIView.indicatorCount[viewID] = count - 1
+                return
+            } else {
+                UIView.indicatorCount[viewID] = nil
+            }
+        }
+        
         // 태그로 Activity Indicator를 찾음
         if let activityIndicator = self.viewWithTag(9999) as? UIActivityIndicatorView {
             activityIndicator.stopAnimating()
