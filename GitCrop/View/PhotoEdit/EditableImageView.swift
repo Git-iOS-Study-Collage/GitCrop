@@ -66,6 +66,7 @@ class EditableImageView: UIView {
     private func viewBasicSet() {
         self.backgroundColor = .black
         self.isUserInteractionEnabled = true
+        self.setDoubleTapEvent()
     }
     
     private func scrollViewBasicSet() {
@@ -108,12 +109,30 @@ class EditableImageView: UIView {
         scrollView.contentSize = imageView.bounds.size
         imageView.image = image
         
+        // 동적으로 minimumZoomScale을 설정
+        // 가로세로 중 큰 부분은 스크롤뷰의 크기보다 작아지지 않도록 minimum 설정
+        let scrollViewSize = scrollView.bounds.size
+        let widthScale = scrollViewSize.width / imageView.bounds.width
+        let heightScale = scrollViewSize.height / imageView.bounds.height
+        scrollView.minimumZoomScale = min(widthScale, heightScale)
+        
         scrollView.scrollToCenter(animated: false)
     }
     
     public func setTappedEvent(target: Any?, action: Selector?) {
         let tapGesture = UITapGestureRecognizer(target: target, action: action)
         self.addGestureRecognizer(tapGesture)
+    }
+    
+    // 더블탭 시 이미지 크기를 스크롤뷰에 딱 맞게 꽉 차도록 설정(이미지 선택 초기상태와 동일)
+    private func setDoubleTapEvent() {
+        let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(_:)))
+        doubleTapGesture.numberOfTapsRequired = 2
+        self.addGestureRecognizer(doubleTapGesture)
+    }
+    
+    @objc func handleDoubleTap(_ gesture: UITapGestureRecognizer) {
+        scrollView.zoomScale = 1
     }
 }
 
