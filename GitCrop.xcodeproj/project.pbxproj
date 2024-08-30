@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6893A4522C5FC1BB006044BE /* CollageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6893A4512C5FC1BB006044BE /* CollageView.swift */; };
 		AA1E68102C85917A0055A317 /* NSNotification.Name+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1E680F2C85917A0055A317 /* NSNotification.Name+Extension.swift */; };
+		84D4FB112C7EEF250001928D /* PhotoPickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4FB102C7EEF250001928D /* PhotoPickViewController.swift */; };
 		AA556E392C589ECE00948CCD /* UICollectionView+Extenion.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA556E382C589ECE00948CCD /* UICollectionView+Extenion.swift */; };
 		AA556E3B2C58A00200948CCD /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA556E3A2C58A00200948CCD /* Reusable.swift */; };
 		AA556E3D2C58A03400948CCD /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA556E3C2C58A03400948CCD /* UICollectionViewCell.swift */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		6893A4512C5FC1BB006044BE /* CollageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollageView.swift; sourceTree = "<group>"; };
 		AA1E680F2C85917A0055A317 /* NSNotification.Name+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification.Name+Extension.swift"; sourceTree = "<group>"; };
+		84D4FB102C7EEF250001928D /* PhotoPickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickViewController.swift; sourceTree = "<group>"; };
 		AA556E382C589ECE00948CCD /* UICollectionView+Extenion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extenion.swift"; sourceTree = "<group>"; };
 		AA556E3A2C58A00200948CCD /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		AA556E3C2C58A03400948CCD /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
@@ -83,6 +85,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84D4FB0F2C7EEEF80001928D /* Collage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Collage;
+			sourceTree = "<group>";
+		};
 		AA556E3E2C58A04400948CCD /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,7 +155,9 @@
 		AA830A9C2C5CF2FB00B9ABBF /* PhotoEdit */ = {
 			isa = PBXGroup;
 			children = (
+				84D4FB0F2C7EEEF80001928D /* Collage */,
 				AA830A972C5CE54C00B9ABBF /* PhotoEditViewController.swift */,
+				84D4FB102C7EEF250001928D /* PhotoPickViewController.swift */,
 				6893A4512C5FC1BB006044BE /* CollageView.swift */,
 				AA830A9F2C5CF83700B9ABBF /* VerticalCollageView.swift */,
 				AA830AA12C5CF85100B9ABBF /* GridCollageView.swift */,
@@ -291,6 +302,7 @@
 				AA83A6592C57B19A008C14E3 /* AppDelegate.swift in Sources */,
 				AA556E4E2C58A7B700948CCD /* PHAssetManager.swift in Sources */,
 				AA830A9E2C5CF45500B9ABBF /* PhotoEditView.swift in Sources */,
+				84D4FB112C7EEF250001928D /* PhotoPickViewController.swift in Sources */,
 				6893A4522C5FC1BB006044BE /* CollageView.swift in Sources */,
 				AA556E3B2C58A00200948CCD /* Reusable.swift in Sources */,
 			);
@@ -445,6 +457,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RT3T8DHJJ3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GitCrop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -477,6 +490,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RT3T8DHJJ3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GitCrop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

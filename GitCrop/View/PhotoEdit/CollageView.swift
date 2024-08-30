@@ -8,6 +8,9 @@
 import UIKit
 
 /// 콜라주할 이미지 출력 화면
+protocol ImageSelectDelegate {
+    func imageTapped()
+}
 
 class CollageView: UIView {
     var scrollView = UIScrollView()
@@ -16,17 +19,21 @@ class CollageView: UIView {
     var selectMode = false
     var selectCount = 0
     
+    var delegate: ImageSelectDelegate?
+    
     /// 이미지 뷰 선택 시 활성화 TapGesture
     @objc func imageViewTapped(_ gesture: UITapGestureRecognizer) {
-//        guard let imageView = gesture.view as? UIImageView else { return }
         guard let imageView = gesture.view else { return }
+        
         selectMode = true
         selectCount = imageView.tag
         imageViewList.forEach {
             $0.layer.borderWidth = 0
         }
-        imageView.layer.borderWidth = 1
+        imageView.layer.borderWidth = 2
         imageView.layer.borderColor = UIColor.red.cgColor
+        
+        delegate?.imageTapped()
     }
     
     func clear() {
