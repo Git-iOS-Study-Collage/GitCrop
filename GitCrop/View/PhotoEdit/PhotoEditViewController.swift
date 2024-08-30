@@ -13,6 +13,7 @@ class PhotoEditViewController: UIViewController {
     let photoShape: PhotoShape
     var collageView: CollageView!
     var imageListView = ImageViewListView()
+    var minimapImageView = UIImageView()
     var count = 0
     
     private let imageProcessingQueue = DispatchQueue(label: "com.Git.GitCrop.imageProcessingQueue")
@@ -33,6 +34,7 @@ class PhotoEditViewController: UIViewController {
         basicSetUI()
         anchorUI()
         setupNavigationUI()
+        setup()
     }
     
     /// 선택한 콜라주 설정
@@ -50,17 +52,17 @@ class PhotoEditViewController: UIViewController {
     
     func insertUI() {
         view.addSubview(collageView)
-        view.addSubview(imageListView)
+//        view.addSubview(imageListView)
     }
     
     func basicSetUI() {
         viewBasicSet()
-        imageListViewBasicSet()
+//        imageListViewBasicSet()
     }
     
     func anchorUI() {
         collageViewAnchor()
-        imageListViewAnchor()
+//        imageListViewAnchor()
     }
     
     func viewBasicSet() {
@@ -81,6 +83,7 @@ class PhotoEditViewController: UIViewController {
             } else {
                 $0.width.height.equalTo(view.frame.width)
             }
+            $0.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
     
@@ -94,6 +97,10 @@ class PhotoEditViewController: UIViewController {
     func setupNavigationUI() {
         let saveButton = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonPressed))
         navigationItem.rightBarButtonItem = saveButton
+    }
+    
+    func setup() {
+        collageView.delegate = self
     }
 }
 
@@ -147,5 +154,13 @@ extension PhotoEditViewController {
             // 저장 성공 시 처리
             showAlert(message: "저장되었습니다.")
         }
+    }
+}
+
+
+extension PhotoEditViewController: ImageSelectDelegate {
+    func imageTapped() {
+        let vc = PhotoPickViewController()
+        present(vc, animated: true)
     }
 }
