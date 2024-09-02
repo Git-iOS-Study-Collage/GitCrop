@@ -10,5 +10,5 @@ import UIKit
 
 struct PHImage {
     let asset: PHAsset
-    let thumbnail: UIImage
+    let thumbnail: UIImage? 
 }

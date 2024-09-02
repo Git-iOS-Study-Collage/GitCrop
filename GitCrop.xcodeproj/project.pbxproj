@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6893A4522C5FC1BB006044BE /* CollageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6893A4512C5FC1BB006044BE /* CollageView.swift */; };
+		AA1E68102C85917A0055A317 /* NSNotification.Name+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1E680F2C85917A0055A317 /* NSNotification.Name+Extension.swift */; };
 		AA556E392C589ECE00948CCD /* UICollectionView+Extenion.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA556E382C589ECE00948CCD /* UICollectionView+Extenion.swift */; };
 		AA556E3B2C58A00200948CCD /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA556E3A2C58A00200948CCD /* Reusable.swift */; };
 		AA556E3D2C58A03400948CCD /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA556E3C2C58A03400948CCD /* UICollectionViewCell.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		6893A4512C5FC1BB006044BE /* CollageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollageView.swift; sourceTree = "<group>"; };
+		AA1E680F2C85917A0055A317 /* NSNotification.Name+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification.Name+Extension.swift"; sourceTree = "<group>"; };
 		AA556E382C589ECE00948CCD /* UICollectionView+Extenion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extenion.swift"; sourceTree = "<group>"; };
 		AA556E3A2C58A00200948CCD /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		AA556E3C2C58A03400948CCD /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				AA556E3C2C58A03400948CCD /* UICollectionViewCell.swift */,
 				E248F4412C6B2F73006E12E5 /* UIView+Extension.swift */,
 				E248F4432C6B324B006E12E5 /* UIViewController+Extension.swift */,
+				AA1E680F2C85917A0055A317 /* NSNotification.Name+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				E248F4442C6B324B006E12E5 /* UIViewController+Extension.swift in Sources */,
 				AA556E582C58D4AD00948CCD /* String+Extension.swift in Sources */,
 				AA830AA02C5CF83700B9ABBF /* VerticalCollageView.swift in Sources */,
+				AA1E68102C85917A0055A317 /* NSNotification.Name+Extension.swift in Sources */,
 				AA556E542C58A88E00948CCD /* ImageListCollectionCell.swift in Sources */,
 				E248F4422C6B2F73006E12E5 /* UIView+Extension.swift in Sources */,
 				AA83A6592C57B19A008C14E3 /* AppDelegate.swift in Sources */,
@@ -438,9 +442,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3HC54CTUUJ;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GitCrop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -454,13 +458,14 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Git.GitCrop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -469,9 +474,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3HC54CTUUJ;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GitCrop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -485,13 +490,14 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Git.GitCrop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

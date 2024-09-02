@@ -23,7 +23,13 @@ final class ImageListCollectionCell: UICollectionViewCell {
     }
     
     func configureCell(phImage: PHImage) {
-        imageView.image = phImage.thumbnail
+        loadImage(asset: phImage)
+    }
+    
+    func loadImage(asset: PHImage) {
+        Task {
+            imageView.image = await PHAssetManager.shared.getMiniImage(asset: asset.asset)
+        }
     }
 }
 

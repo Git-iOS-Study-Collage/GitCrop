@@ -10,7 +10,7 @@ import Photos
 
 /// 사진 라이브러리 불러오기 담당 Manager
 
-final class PHAssetManager {
+final class PHAssetManager: NSObject {
     static let shared = PHAssetManager()
     private var storedPHImages: [PHImage] = []
     
@@ -73,9 +73,21 @@ final class PHAssetManager {
     var albumTypeList: [PHFetchResult<PHAssetCollection>] {
         return configs.albumType
     }
+    
+    override init() {
+        super.init()
+        PHPhotoLibrary.shared().register(self)
+    }
+}
+
+extension PHAssetManager: PHPhotoLibraryChangeObserver {
+    func photoLibraryDidChange(_ changeInstance: PHChange) {
+        NotificationCenter.default.post(name: .detectPhoto, object: nil)
+    }
 }
 
 extension PHAssetManager {
+    
     func getPHAssetCollection() -> [PHCollection] {
         var allAssetCollections = [PHCollection]()
         
@@ -104,7 +116,6 @@ extension PHAssetManager {
             completion(image)
         }
     }
-    
     
     func getPHAssetAlbumList() async -> [AssetAlbum] {
         var albums = [AssetAlbum]()
@@ -145,6 +156,17 @@ extension PHAssetManager {
         }
     }
     
+    func getMiniImage(asset: PHAsset, size: CGSize = CGSize(width: 150, height: 150)) async -> UIImage? {
+        return await withCheckedContinuation { continuation in
+            PHImageManager.default().requestImage(for: asset,
+                                                  targetSize: size,
+                                                  contentMode: .aspectFill,
+                                                  options: imageRequestOptions) { image, _ in
+                continuation.resume(returning: image)
+            }
+        }
+    }
+
     func getImageList(
         assetList: [PHAsset],
         contentMode: PHImageContentMode = .aspectFit,
@@ -152,15 +174,15 @@ extension PHAssetManager {
     ) async -> [PHImage] {
         var phImages = [PHImage]()
         for asset in assetList {
-            if let image = await withCheckedContinuation({ continuation in
-                PHImageManager.default().requestImage(for: asset, targetSize: thumbnailSize, contentMode: contentMode, options: self.imageRequestOptions) { image, _ in
-                    continuation.resume(returning: image)
-                }
-            }) {
-                let phImage = PHImage(asset: asset, thumbnail: image)
+//            if let image = await withCheckedContinuation({ continuation in
+//                PHImageManager.default().requestImage(for: asset, targetSize: thumbnailSize, contentMode: contentMode, options: self.imageRequestOptions) { image, _ in
+//                    continuation.resume(returning: image)
+//                }
+//            }) {
+                let phImage = PHImage(asset: asset, thumbnail: nil)
                 phImages.append(phImage)
             }
-        }
+        
         return phImages
     }
 }
