@@ -52,17 +52,14 @@ class PhotoEditViewController: UIViewController {
     
     func insertUI() {
         view.addSubview(collageView)
-//        view.addSubview(imageListView)
     }
     
     func basicSetUI() {
         viewBasicSet()
-//        imageListViewBasicSet()
     }
     
     func anchorUI() {
         collageViewAnchor()
-//        imageListViewAnchor()
     }
     
     func viewBasicSet() {
@@ -75,7 +72,6 @@ class PhotoEditViewController: UIViewController {
     
     func collageViewAnchor() {
         collageView.snp.makeConstraints {
-//            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.centerX.equalTo(view.safeAreaLayoutGuide)
             if photoShape.shapeType == .vertical {

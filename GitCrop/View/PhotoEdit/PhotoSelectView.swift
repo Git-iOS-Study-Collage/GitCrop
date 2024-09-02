@@ -1,5 +1,5 @@
 //
-//  PhotoEditView.swift
+//  PhotoSelectView.swift
 //  GitCrop
 //
 //  Created by dev dfcc on 8/2/24.
