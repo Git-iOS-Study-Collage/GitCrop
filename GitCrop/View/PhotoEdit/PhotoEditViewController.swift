@@ -16,6 +16,8 @@ class PhotoEditViewController: UIViewController {
     var minimapImageView = UIImageView()
     var count = 0
     
+    let nextButton = UIBarButtonItem()
+    
     private let imageProcessingQueue = DispatchQueue(label: "com.Git.GitCrop.imageProcessingQueue")
     
     init(photoShape: PhotoShape) {
@@ -40,6 +42,9 @@ class PhotoEditViewController: UIViewController {
     /// 선택한 콜라주 설정
     func collageViewSetup() {
         let size =  view.frame.size
+    
+        navigationItem.title = photoShape.title
+        
         switch photoShape.shapeType {
         case .vertical:
             collageView = VerticalCollageView(frame: CGRect(origin: .zero, size: size))
@@ -91,8 +96,13 @@ class PhotoEditViewController: UIViewController {
     }
     
     func setupNavigationUI() {
-        let saveButton = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonPressed))
-        navigationItem.rightBarButtonItem = saveButton
+        nextButton.title = "다음"
+        nextButton.style = .plain
+        nextButton.target = self
+        nextButton.action = #selector(nextButtonPressed)
+        nextButton.isEnabled = false
+
+        navigationItem.rightBarButtonItem = nextButton
     }
     
     func setup() {
@@ -132,24 +142,11 @@ extension PhotoEditViewController: ImageViewListViewDelegate {
 }
 
 extension PhotoEditViewController {
-    
-    @objc func saveButtonPressed() {
-//        saveImageToPhotos(image: collageView.stackView.toImage())
-        saveImageToPhotos(image: collageView.stackView.asImage(targetWidth: 1920))
-    }
-    
-    func saveImageToPhotos(image: UIImage) {
-        UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
-    }
-
-    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-        if let error = error {
-            // 저장 실패 시 처리
-            showAlert(title: "오류", message: error.localizedDescription)
-        } else {
-            // 저장 성공 시 처리
-            showAlert(message: "저장되었습니다.")
-        }
+    @objc
+    func nextButtonPressed() {
+        let image = collageView.stackView.asImage(targetWidth: 1920)
+        let vc = ResultViewController(resultImage: image)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -168,6 +165,7 @@ extension PhotoEditViewController: PhotoPickDelegate {
             guard let self = self else { return }
         
             collageView.setImage(image, for: tag)
+            nextButton.isEnabled = true
         }
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 /// 창문형 콜라주 화면
 
@@ -60,7 +61,8 @@ class GridCollageView: CollageView {
     
     func scrollViewAnchor() {
         scrollView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.leading.trailing.bottom.equalToSuperview()
+            $0.top.equalToSuperview().inset(50)
         }
     }
 
