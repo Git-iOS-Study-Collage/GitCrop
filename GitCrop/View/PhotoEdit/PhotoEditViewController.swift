@@ -156,7 +156,18 @@ extension PhotoEditViewController {
 
 extension PhotoEditViewController: ImageSelectDelegate {
     func imageTapped() {
-        let vc = PhotoPickViewController()
+        let vc = PhotoPickViewController(tag: count)
+        vc.delegate = self
         present(vc, animated: true)
+    }
+}
+
+extension PhotoEditViewController: PhotoPickDelegate {
+    func didSelectPhoto(image: UIImage, tag: Int) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+        
+            collageView.setImage(image, for: tag)
+        }
     }
 }
