@@ -38,7 +38,8 @@ final class ImageViewListView: UIView {
         insertUI()
         basicSetUI()
         anchorUI()
-        bindUI()
+        addNotification()
+        loadImageList()
     }
     
     required init?(coder: NSCoder) {
@@ -47,7 +48,17 @@ final class ImageViewListView: UIView {
 }
 
 extension ImageViewListView {
-    func bindUI() {
+    func addNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(detectPhotoPermission), name: .detectPhoto, object: nil)
+    }
+    
+    @objc func detectPhotoPermission(_ notification: Notification) {
+        loadImageList()
+    }
+}
+
+extension ImageViewListView {
+    func loadImageList() {
         let assetList = PHAssetManager.shared.getPHAssets(with: .image)
         Task {
             let imageList = await PHAssetManager.shared.getImageList(assetList: assetList)
