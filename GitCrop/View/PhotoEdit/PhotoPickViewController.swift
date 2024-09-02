@@ -9,11 +9,22 @@ import UIKit
 import SnapKit
 
 protocol PhotoPickDelegate {
-    func didSelectPhoto()
+    func didSelectPhoto(image: UIImage, tag: Int)
 }
 
 
 class PhotoPickViewController: UIViewController {
+    init(tag: Int) {
+        self.tag = tag
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    var delegate: PhotoPickDelegate?
+    var tag: Int
     var saveButton = UIButton()
     var selectedImageView = EditableImageView()
     
@@ -31,18 +42,14 @@ class PhotoPickViewController: UIViewController {
         view.backgroundColor = .white
         imageListView.delegate = self
         buttonSetup()
-        selectedImageViewSetup()
     }
     
     private func buttonSetup() {
         saveButton.setTitle("완료", for: .normal)
-        saveButton.setTitleColor(.gray, for: .disabled)
-        saveButton.setTitleColor(.blue, for: .normal)
+        saveButton.setTitleColor(.systemGray, for: .disabled)
+        saveButton.setTitleColor(.systemBlue, for: .normal)
         saveButton.isEnabled = false
-    }
-    
-    private func selectedImageViewSetup() {
-//        selectedImageView.backgroundColor = .green
+        saveButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
     }
     
     private func interface() {
@@ -83,7 +90,14 @@ class PhotoPickViewController: UIViewController {
             $0.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
             $0.height.equalTo(view).multipliedBy(0.3)
         }
-    }    
+    }
+    
+    @objc
+    private func buttonAction() {
+        guard let image = selectedImageView.imageView.image else { return }
+        delegate?.didSelectPhoto(image: image, tag: tag)
+        self.dismiss(animated: true)
+    }
 }
 
 extension PhotoPickViewController: ImageViewListViewDelegate {
@@ -93,6 +107,7 @@ extension PhotoPickViewController: ImageViewListViewDelegate {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
                     selectedImageView.setImage(image)
+                    saveButton.isEnabled = true
                 }
             }
         }
