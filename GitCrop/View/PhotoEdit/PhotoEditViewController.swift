@@ -13,10 +13,12 @@ class PhotoEditViewController: UIViewController {
     let photoShape: PhotoShape
     var collageView: CollageView!
     var imageListView = ImageViewListView()
+    var backgroundSelectView = BackgroundSelectView()
     var minimapImageView = UIImageView()
     var count = 0
     
     let nextButton = UIBarButtonItem()
+    let backGroundSelectButton = UIBarButtonItem()
     
     private let imageProcessingQueue = DispatchQueue(label: "com.Git.GitCrop.imageProcessingQueue")
     
@@ -57,14 +59,17 @@ class PhotoEditViewController: UIViewController {
     
     func insertUI() {
         view.addSubview(collageView)
+        view.addSubview(backgroundSelectView)
     }
     
     func basicSetUI() {
         viewBasicSet()
+        backgroundSelectViewBasicSet()
     }
     
     func anchorUI() {
         collageViewAnchor()
+        backgroundSelectViewAnchor()
     }
     
     func viewBasicSet() {
@@ -73,6 +78,10 @@ class PhotoEditViewController: UIViewController {
     
     func imageListViewBasicSet() {
         imageListView.delegate = self
+    }
+    
+    func backgroundSelectViewBasicSet() {
+        backgroundSelectView.delegate = self
     }
     
     func collageViewAnchor() {
@@ -85,6 +94,14 @@ class PhotoEditViewController: UIViewController {
                 $0.width.height.equalTo(view.frame.width)
             }
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+    }
+    
+    func backgroundSelectViewAnchor() {
+        backgroundSelectView.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(100)
         }
     }
     
@@ -101,12 +118,23 @@ class PhotoEditViewController: UIViewController {
         nextButton.target = self
         nextButton.action = #selector(nextButtonPressed)
         nextButton.isEnabled = false
-
-        navigationItem.rightBarButtonItem = nextButton
+        
+        backGroundSelectButton.title = "배경"
+        backGroundSelectButton.style = .plain
+        backGroundSelectButton.target = self
+        backGroundSelectButton.action = #selector(backgroundButtonPressed)
+        
+        navigationItem.rightBarButtonItems = [nextButton, backGroundSelectButton]
     }
     
     func setup() {
         collageView.delegate = self
+    }
+}
+
+extension PhotoEditViewController: BackgroundSelectViewDelegate {
+    func didSelectedBackgroundType(backgroundType: BackGroundImageType) {
+        collageView.setBackgroundImage(type: backgroundType)
     }
 }
 
@@ -116,9 +144,9 @@ extension PhotoEditViewController: ImageViewListViewDelegate {
     /// 라이브러리 사진 선택 후 콜라주 뷰에 넣기
     /// 사진 로딩이 오래 걸릴경우 현재 main 스레드가 블럭되는 현상이 잇음
     /// ex: 아이클라우드 백업으로 처리된 오래된 사진을 불러올 때
-    func didSeletedPhoto(phImage: PHImage) {
+    func didSelectedPhoto(phImage: PHImage) {
         
-        if count > 3 {
+        if count > collageView.maxCount {
             count = 0
         }
         
@@ -147,6 +175,11 @@ extension PhotoEditViewController {
         let image = collageView.stackView.asImage(targetWidth: 1920)
         let vc = ResultViewController(resultImage: image)
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc 
+    func backgroundButtonPressed() {
+        backgroundSelectView.isHidden = !backgroundSelectView.isHidden
     }
 }
 
