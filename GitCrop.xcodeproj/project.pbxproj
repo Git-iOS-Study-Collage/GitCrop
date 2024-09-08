@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		685111272C8D6B1A003F9DB4 /* BackGroundImageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685111262C8D6B1A003F9DB4 /* BackGroundImageType.swift */; };
+		685111292C8D6CAD003F9DB4 /* BackgroundSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685111282C8D6CAD003F9DB4 /* BackgroundSelectView.swift */; };
+		6851112B2C8D6D33003F9DB4 /* BackgroundSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851112A2C8D6D33003F9DB4 /* BackgroundSelectCollectionViewCell.swift */; };
 		6893A4522C5FC1BB006044BE /* CollageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6893A4512C5FC1BB006044BE /* CollageView.swift */; };
 		AA1E68102C85917A0055A317 /* NSNotification.Name+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1E680F2C85917A0055A317 /* NSNotification.Name+Extension.swift */; };
 		84D4FB112C7EEF250001928D /* PhotoPickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4FB102C7EEF250001928D /* PhotoPickViewController.swift */; };
@@ -41,6 +44,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		685111262C8D6B1A003F9DB4 /* BackGroundImageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackGroundImageType.swift; sourceTree = "<group>"; };
+		685111282C8D6CAD003F9DB4 /* BackgroundSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSelectView.swift; sourceTree = "<group>"; };
+		6851112A2C8D6D33003F9DB4 /* BackgroundSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSelectCollectionViewCell.swift; sourceTree = "<group>"; };
 		6893A4512C5FC1BB006044BE /* CollageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollageView.swift; sourceTree = "<group>"; };
 		AA1E680F2C85917A0055A317 /* NSNotification.Name+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification.Name+Extension.swift"; sourceTree = "<group>"; };
 		84D4FB102C7EEF250001928D /* PhotoPickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +137,7 @@
 				AA556E492C58A6D000948CCD /* PHImage.swift */,
 				AA556E552C58D49400948CCD /* AssetAlbum.swift */,
 				AA830A952C5CE3EE00B9ABBF /* PhotoShape.swift */,
+				685111262C8D6B1A003F9DB4 /* BackGroundImageType.swift */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -150,6 +157,8 @@
 			children = (
 				AA83A65C2C57B19A008C14E3 /* FrameSelectViewController.swift */,
 				AA830A992C5CEC4D00B9ABBF /* PhotoShapeCollectionCell.swift */,
+				685111282C8D6CAD003F9DB4 /* BackgroundSelectView.swift */,
+				6851112A2C8D6D33003F9DB4 /* BackgroundSelectCollectionViewCell.swift */,
 			);
 			path = FrameSelect;
 			sourceTree = "<group>";
@@ -283,6 +292,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA556E392C589ECE00948CCD /* UICollectionView+Extenion.swift in Sources */,
+				685111292C8D6CAD003F9DB4 /* BackgroundSelectView.swift in Sources */,
+				685111272C8D6B1A003F9DB4 /* BackGroundImageType.swift in Sources */,
 				AA556E502C58A81100948CCD /* PHAssetConfiguration.swift in Sources */,
 				AA556E522C58A84600948CCD /* AlbumVarieties.swift in Sources */,
 				AA83A65D2C57B19A008C14E3 /* FrameSelectViewController.swift in Sources */,
@@ -298,6 +309,7 @@
 				84D4FB132C85A9B20001928D /* ResultViewController.swift in Sources */,
 				E248F4482C72CE05006E12E5 /* ZoomableImageDelegate.swift in Sources */,
 				E248F4442C6B324B006E12E5 /* UIViewController+Extension.swift in Sources */,
+				6851112B2C8D6D33003F9DB4 /* BackgroundSelectCollectionViewCell.swift in Sources */,
 				AA556E582C58D4AD00948CCD /* String+Extension.swift in Sources */,
 				AA830AA02C5CF83700B9ABBF /* VerticalCollageView.swift in Sources */,
 				AA1E68102C85917A0055A317 /* NSNotification.Name+Extension.swift in Sources */,
