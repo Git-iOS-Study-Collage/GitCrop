@@ -15,11 +15,16 @@ protocol ImageSelectDelegate {
 class CollageView: UIView {
     var scrollView = UIScrollView()
     var stackView = UIStackView()
+    var backgroundImageView = UIImageView()
     var imageViewList: [EditableImageView] = []
     var selectMode = false
     var selectCount = 0
-    
+    var maxCount = 0 // 사진 최대갯수 설정
     var delegate: ImageSelectDelegate?
+    
+    var backgroundImage: UIImage? {
+        return backgroundImageView.image
+    }
     
     /// 이미지 뷰 선택 시 활성화 TapGesture
     @objc func imageViewTapped(_ gesture: UITapGestureRecognizer) {
@@ -30,8 +35,8 @@ class CollageView: UIView {
         imageViewList.forEach {
             $0.layer.borderWidth = 0
         }
-        imageView.layer.borderWidth = 2
-        imageView.layer.borderColor = UIColor.red.cgColor
+        imageView.layer.borderWidth = 5
+        imageView.layer.borderColor = UIColor.black.cgColor
         
         delegate?.imageTapped()
     }
@@ -59,10 +64,14 @@ class CollageView: UIView {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.backgroundColor = .lightGray // Placeholder color
+        imageView.backgroundColor = .cyan // Placeholder color
         imageView.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
         imageView.addGestureRecognizer(tapGesture)
         return imageView
+    }
+    
+    func setBackgroundImage(type: BackGroundImageType) {
+        backgroundImageView.image = type.image
     }
 }
