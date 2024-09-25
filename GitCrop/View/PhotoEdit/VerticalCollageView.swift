@@ -11,13 +11,14 @@ import SnapKit
 /// 인생네컷 화면 
 
 class VerticalCollageView: CollageView {
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         insertUI()
         basicSetUI()
         anchorUI()
         setupStackView()
+        
+        maxCount = 4
     }
     
     required init?(coder: NSCoder) {
@@ -27,17 +28,20 @@ class VerticalCollageView: CollageView {
  
     func insertUI() {
         addSubview(scrollView)
+        scrollView.addSubview(backgroundImageView)
         scrollView.addSubview(stackView)
     }
     
     func basicSetUI() {
         viewBasicSet()
         scrollViewBasicSet()
+        backgroundImageViewBasicSet()
         stackViewBasicSet()
     }
     
     func anchorUI() {
         scrollViewAnchor()
+        backgroundImageViewAnchor()
         stackViewAnchor()
     }
     
@@ -52,9 +56,17 @@ class VerticalCollageView: CollageView {
         scrollView.isScrollEnabled = true
     }
     
+    func backgroundImageViewBasicSet() {
+        backgroundImageView.contentMode = .scaleAspectFill
+        backgroundImageView.backgroundColor = .blue
+        backgroundImageView.clipsToBounds = true
+        backgroundImageView.image = BackGroundImageType.checkBackground.image
+    }
+    
     func stackViewBasicSet() {
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
+        stackView.alignment = .center
         stackView.spacing = 1
         stackView.backgroundColor = .clear
     }
@@ -62,6 +74,14 @@ class VerticalCollageView: CollageView {
     func scrollViewAnchor() {
         scrollView.snp.makeConstraints {
             $0.edges.equalToSuperview()
+        }
+    }
+    
+    func backgroundImageViewAnchor() {
+        backgroundImageView.snp.makeConstraints {
+            $0.top.bottom.equalToSuperview()
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(scrollView.snp.width).multipliedBy(0.5)
         }
     }
 
@@ -73,15 +93,32 @@ class VerticalCollageView: CollageView {
         }
     }
         
+    /// 백그라운드 이미지 표시를 위한 추가 작업
     func setupStackView() {
         for i in 0..<4 {
+            let containerView = UIView()
+            containerView.backgroundColor = .clear
+            
             let editableImageView = EditableImageView()
             editableImageView.setTappedEvent(target: self, action: #selector(imageViewTapped))
             editableImageView.tag = i
-            stackView.addArrangedSubview(editableImageView)
+            
+            containerView.addSubview(editableImageView)
+            stackView.addArrangedSubview(containerView)
+            
             imageViewList.append(editableImageView)
+            
+            containerView.snp.makeConstraints {
+                $0.width.height.equalTo(snp.width).multipliedBy(0.5)
+            }
+            
             editableImageView.snp.makeConstraints {
-                $0.width.height.equalTo(self.snp.width).multipliedBy(0.5)
+                
+                $0.top.equalTo(10)
+                $0.leading.equalTo(15)
+                $0.trailing.equalTo(-15)
+                $0.bottom.equalTo(-10)
+                //$0.width.height.equalTo(self.snp.width).multipliedBy(0.45)
             }
         }
     }

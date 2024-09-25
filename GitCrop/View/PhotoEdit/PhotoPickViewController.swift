@@ -101,7 +101,7 @@ class PhotoPickViewController: UIViewController {
 }
 
 extension PhotoPickViewController: ImageViewListViewDelegate {
-    func didSeletedPhoto(phImage: PHImage) {
+    func didSelectedPhoto(phImage: PHImage) {
         imageProcessingQueue.async {
             PHAssetManager.shared.getImage(asset: phImage.asset) { image in
                 DispatchQueue.main.async { [weak self] in

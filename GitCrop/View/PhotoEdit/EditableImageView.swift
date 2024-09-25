@@ -64,7 +64,7 @@ class EditableImageView: UIView {
     }
     
     private func viewBasicSet() {
-        self.backgroundColor = .black
+        self.backgroundColor = .clear
         self.isUserInteractionEnabled = true
         self.setDoubleTapEvent()
     }

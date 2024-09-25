@@ -13,7 +13,7 @@ import Photos
 /// 라이브러리의 사진 목록 화면
 
 protocol ImageViewListViewDelegate: AnyObject {
-    func didSeletedPhoto(phImage: PHImage)
+    func didSelectedPhoto(phImage: PHImage)
 }
 
 final class ImageViewListView: UIView {
@@ -97,7 +97,7 @@ extension ImageViewListView {
 extension ImageViewListView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = assetList[indexPath.item]
-        delegate?.didSeletedPhoto(phImage: item)
+        delegate?.didSelectedPhoto(phImage: item)
     }
 }
 
