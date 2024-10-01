@@ -10,17 +10,18 @@
 		685111272C8D6B1A003F9DB4 /* BackGroundImageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685111262C8D6B1A003F9DB4 /* BackGroundImageType.swift */; };
 		685111292C8D6CAD003F9DB4 /* BackgroundSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685111282C8D6CAD003F9DB4 /* BackgroundSelectView.swift */; };
 		6851112B2C8D6D33003F9DB4 /* BackgroundSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851112A2C8D6D33003F9DB4 /* BackgroundSelectCollectionViewCell.swift */; };
+		6882E8692CA2F081006F6372 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6882E8682CA2F081006F6372 /* SnapKit */; };
 		6893A4522C5FC1BB006044BE /* CollageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6893A4512C5FC1BB006044BE /* CollageView.swift */; };
 		84D4FB112C7EEF250001928D /* PhotoPickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4FB102C7EEF250001928D /* PhotoPickViewController.swift */; };
 		84D4FB132C85A9B20001928D /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4FB122C85A9B20001928D /* ResultViewController.swift */; };
 		AA1E68102C85917A0055A317 /* NSNotification.Name+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1E680F2C85917A0055A317 /* NSNotification.Name+Extension.swift */; };
 		84D4FB112C7EEF250001928D /* PhotoPickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4FB102C7EEF250001928D /* PhotoPickViewController.swift */; };
 		84D4FB132C85A9B20001928D /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4FB122C85A9B20001928D /* ResultViewController.swift */; };
+		AA1E68102C85917A0055A317 /* NSNotification.Name+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1E680F2C85917A0055A317 /* NSNotification.Name+Extension.swift */; };
 		AA556E392C589ECE00948CCD /* UICollectionView+Extenion.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA556E382C589ECE00948CCD /* UICollectionView+Extenion.swift */; };
 		AA556E3B2C58A00200948CCD /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA556E3A2C58A00200948CCD /* Reusable.swift */; };
 		AA556E3D2C58A03400948CCD /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA556E3C2C58A03400948CCD /* UICollectionViewCell.swift */; };
 		AA556E432C58A58700948CCD /* ImageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA556E422C58A58700948CCD /* ImageListView.swift */; };
-		AA556E462C58A66900948CCD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AA556E452C58A66900948CCD /* SnapKit */; };
 		AA556E4A2C58A6D000948CCD /* PHImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA556E492C58A6D000948CCD /* PHImage.swift */; };
 		AA556E4E2C58A7B700948CCD /* PHAssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA556E4D2C58A7B700948CCD /* PHAssetManager.swift */; };
 		AA556E502C58A81100948CCD /* PHAssetConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA556E4F2C58A81100948CCD /* PHAssetConfiguration.swift */; };
@@ -55,6 +56,7 @@
 		AA1E680F2C85917A0055A317 /* NSNotification.Name+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification.Name+Extension.swift"; sourceTree = "<group>"; };
 		84D4FB102C7EEF250001928D /* PhotoPickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickViewController.swift; sourceTree = "<group>"; };
 		84D4FB122C85A9B20001928D /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		AA1E680F2C85917A0055A317 /* NSNotification.Name+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification.Name+Extension.swift"; sourceTree = "<group>"; };
 		AA556E382C589ECE00948CCD /* UICollectionView+Extenion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extenion.swift"; sourceTree = "<group>"; };
 		AA556E3A2C58A00200948CCD /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		AA556E3C2C58A03400948CCD /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
@@ -90,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA556E462C58A66900948CCD /* SnapKit in Frameworks */,
+				6882E8692CA2F081006F6372 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,7 +237,7 @@
 			);
 			name = GitCrop;
 			packageProductDependencies = (
-				AA556E452C58A66900948CCD /* SnapKit */,
+				6882E8682CA2F081006F6372 /* SnapKit */,
 			);
 			productName = GitCrop;
 			productReference = AA83A6552C57B19A008C14E3 /* GitCrop.app */;
@@ -266,7 +268,7 @@
 			);
 			mainGroup = AA83A64C2C57B19A008C14E3;
 			packageReferences = (
-				AA556E442C58A66900948CCD /* XCRemoteSwiftPackageReference "SnapKit" */,
+				6882E8672CA2F081006F6372 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = AA83A6562C57B19A008C14E3 /* Products */;
 			projectDirPath = "";
@@ -561,9 +563,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		AA556E442C58A66900948CCD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		6882E8672CA2F081006F6372 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.7.1;
@@ -572,9 +574,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		AA556E452C58A66900948CCD /* SnapKit */ = {
+		6882E8682CA2F081006F6372 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AA556E442C58A66900948CCD /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 6882E8672CA2F081006F6372 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
