@@ -26,8 +26,6 @@ class CollageView: UIView {
         return backgroundImageView.image
     }
     
-    var delegate: ImageSelectDelegate?
-    
     /// 이미지 뷰 선택 시 활성화 TapGesture
     @objc func imageViewTapped(_ gesture: UITapGestureRecognizer) {
         guard let imageView = gesture.view else { return }

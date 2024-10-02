@@ -98,7 +98,8 @@ class GridCollageView: CollageView {
 
     /// 창문형 배경 이미지 뷰 추가 작업
     func setupStackView() {
-        for i in 0..<2 {
+        // i: 세로로 들어갈 horizontalStackView 개수 (세로줄 개수)
+        for i in 0...1 {
             let containerView = UIView()
             containerView.backgroundColor = .clear
             
@@ -109,27 +110,24 @@ class GridCollageView: CollageView {
             horizontalStackView.backgroundColor = .clear
             stackView.addArrangedSubview(horizontalStackView)
 
-            for j in 0..<2 {
+            // j: 가로로 들어갈 ImageView 개수 (가로줄 개수)
+            let horizontalMaxCount: Int = 2
+            for j in 1...horizontalMaxCount {
                 let editableImageView = EditableImageView()
                 editableImageView.setTappedEvent(target: self, action: #selector(imageViewTapped))
                 
-                if i == 0 {
-                    editableImageView.tag = i
-                } else {
-                    editableImageView.tag = i+j+1
-                }
+                editableImageView.tag = horizontalMaxCount*i + j - 1
                 imageViewList.append(editableImageView)
                 
                 let container = UIView()
                 container.backgroundColor = .clear
                 container.addSubview(editableImageView)
                 
-                
                 // container를 horizontalStackView에 추가
                 horizontalStackView.addArrangedSubview(container)
                 
                 container.snp.makeConstraints {
-                    $0.width.height.equalTo(snp.width).multipliedBy(0.5)
+                    $0.width.height.equalTo(snp.width).multipliedBy(1.0 / Double(horizontalMaxCount))
                 }
                 
                 editableImageView.snp.makeConstraints {
