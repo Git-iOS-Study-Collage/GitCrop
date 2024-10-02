@@ -19,7 +19,6 @@ class ResultViewController: UIViewController {
     }
     
     var resultImage: UIImage
-    var scrollView = UIScrollView()
     var imageview = UIImageView()
     let saveButton = UIBarButtonItem()
     
@@ -33,12 +32,7 @@ class ResultViewController: UIViewController {
     private func setup() {
         view.backgroundColor = .white
         
-        scrollView.minimumZoomScale = 1.0
-        scrollView.maximumZoomScale = 3.0
-        scrollView.backgroundColor = .clear
-        scrollView.isScrollEnabled = true
-        
-        imageview.contentMode = .scaleAspectFill
+        imageview.contentMode = .scaleAspectFit
         imageview.image = resultImage
         
         setupNavigationUI()
@@ -56,17 +50,9 @@ class ResultViewController: UIViewController {
     
     
     private func interface() {
-        view.addSubview(scrollView)
-        scrollView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
-        scrollView.contentSize = scrollView.bounds.size
-        
-        scrollView.addSubview(imageview)
+        view.addSubview(imageview)
         imageview.snp.makeConstraints {
-            $0.top.bottom.equalTo(scrollView.safeAreaLayoutGuide)
-            $0.centerX.equalToSuperview()
-            $0.height.equalTo(scrollView.frame.height)
+            $0.edges.equalTo(view.safeAreaLayoutGuide)
         }
     }
 }
