@@ -13,7 +13,6 @@ import SnapKit
 class VerticalCollageView: CollageView {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        insertUI()
         basicSetUI()
         anchorUI()
         setupStackView()
@@ -23,13 +22,6 @@ class VerticalCollageView: CollageView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-       
-    }
- 
-    func insertUI() {
-        addSubview(scrollView)
-        scrollView.addSubview(backgroundImageView)
-        scrollView.addSubview(stackView)
     }
     
     func basicSetUI() {
@@ -41,6 +33,7 @@ class VerticalCollageView: CollageView {
     
     func anchorUI() {
         scrollViewAnchor()
+        contentViewAnchor()
         backgroundImageViewAnchor()
         stackViewAnchor()
     }
@@ -77,19 +70,23 @@ class VerticalCollageView: CollageView {
         }
     }
     
-    func backgroundImageViewAnchor() {
-        backgroundImageView.snp.makeConstraints {
+    func contentViewAnchor() {
+        contentView.snp.makeConstraints {
             $0.top.bottom.equalToSuperview()
             $0.centerX.equalToSuperview()
             $0.width.equalTo(scrollView.snp.width).multipliedBy(0.5)
         }
     }
+    
+    func backgroundImageViewAnchor() {
+        backgroundImageView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+    }
 
     func stackViewAnchor() {
         stackView.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview()
-            $0.centerX.equalToSuperview()
-            $0.width.equalTo(scrollView.snp.width).multipliedBy(0.5)
+            $0.edges.equalToSuperview()
         }
     }
         

@@ -14,7 +14,6 @@ class GridCollageView: CollageView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        insertUI()
         basicSetUI()
         anchorUI()
         setupStackView()
@@ -24,13 +23,6 @@ class GridCollageView: CollageView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupStackView()
-    }
-    
-    func insertUI() {
-        addSubview(scrollView)
-        scrollView.addSubview(backgroundImageView)
-        scrollView.addSubview(stackView)
     }
     
     func basicSetUI() {
@@ -42,6 +34,7 @@ class GridCollageView: CollageView {
     
     func anchorUI() {
         scrollViewAnchor()
+        contentViewAnchor()
         backgroundImageViewAnchor()
         stackViewAnchor()
     }
@@ -80,18 +73,23 @@ class GridCollageView: CollageView {
         }
     }
     
-    func backgroundImageViewAnchor() {
-        backgroundImageView.snp.makeConstraints {
+    func contentViewAnchor() {
+        contentView.snp.makeConstraints {
             $0.top.bottom.equalToSuperview()
             $0.centerX.equalToSuperview()
-            $0.width.equalTo(scrollView.snp.width).multipliedBy(1)
+            $0.width.height.equalTo(scrollView.snp.width).multipliedBy(1)
+        }
+    }
+    
+    func backgroundImageViewAnchor() {
+        backgroundImageView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
     }
 
     func stackViewAnchor() {
         stackView.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview()
-            $0.width.height.equalTo(frame.width)
+            $0.edges.equalToSuperview()
         }
     }
     

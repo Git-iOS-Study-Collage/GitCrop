@@ -13,9 +13,12 @@ protocol ImageSelectDelegate {
 }
 
 class CollageView: UIView {
+    
     var scrollView = UIScrollView()
-    var stackView = UIStackView()
+    var contentView = UIView()
     var backgroundImageView = UIImageView()
+    var stackView = UIStackView()
+    
     var imageViewList: [EditableImageView] = []
     var selectMode = false
     var selectCount = 0
@@ -24,6 +27,23 @@ class CollageView: UIView {
     
     var backgroundImage: UIImage? {
         return backgroundImageView.image
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        insertUI()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        insertUI()
+    }
+    
+    func insertUI() {
+        addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addSubview(backgroundImageView)
+        contentView.addSubview(stackView)
     }
     
     /// 이미지 뷰 선택 시 활성화 TapGesture

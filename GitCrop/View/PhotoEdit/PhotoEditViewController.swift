@@ -173,7 +173,7 @@ extension PhotoEditViewController: ImageViewListViewDelegate {
 extension PhotoEditViewController {
     @objc
     func nextButtonPressed() {
-        let image = collageView.stackView.asImage(targetWidth: 1920)
+        let image = collageView.contentView.asImage(targetWidth: 1920)
         let vc = ResultViewController(resultImage: image)
         self.navigationController?.pushViewController(vc, animated: true)
     }

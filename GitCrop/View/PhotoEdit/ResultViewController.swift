@@ -60,12 +60,13 @@ class ResultViewController: UIViewController {
         scrollView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+        scrollView.contentSize = scrollView.bounds.size
         
         scrollView.addSubview(imageview)
         imageview.snp.makeConstraints {
-            $0.top.bottom.equalTo(view.safeAreaLayoutGuide)
+            $0.top.bottom.equalTo(scrollView.safeAreaLayoutGuide)
             $0.centerX.equalToSuperview()
-            $0.height.equalTo(view.frame.height)
+            $0.height.equalTo(scrollView.frame.height)
         }
     }
 }
